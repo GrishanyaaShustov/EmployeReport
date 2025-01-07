@@ -9,4 +9,6 @@ add_executable(EmployeReport main.cpp
         Headers/EmployeReport.h
         src/EmployeReport.cpp
         src/InputEmploye.cpp
-        headers/InputEmploye.h)
+        headers/InputEmploye.h
+        src/testObjects.cpp
+        headers/testObjects.h)

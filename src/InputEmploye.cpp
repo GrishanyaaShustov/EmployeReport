@@ -106,10 +106,8 @@ EmployeReport InputEmploye() {
         std::cout << "Invalid day. Please enter a valid day for the given month and year: ";
     }
 // ---------------------------------------------------------------------------------------
-    date.tm_year = year - 1900;
-    date.tm_mon = month - 1;
-    date.tm_mday = day;
-    reportInstance.reportDate = date;
+
+    reportInstance.reportDate = getDate(year,month,day);
 
     std::cout << "Report time in seconds: ";
     while (!(std::cin >> reportInstance.reportTimeSeconds) || reportInstance.reportTimeSeconds < 64800 || reportInstance.reportTimeSeconds > 86400) {
@@ -121,6 +119,15 @@ EmployeReport InputEmploye() {
     std::cout << " " << std::endl;
 
     return reportInstance;
+}
+
+std::tm getDate(int year, int month, int day) {
+    std::tm date = {};
+    date.tm_year = year - 1900;
+    date.tm_mon = month-1;
+    date.tm_mday = day;
+
+    return date;
 }
 
 bool isValidDate(int year, int month, int day) {
