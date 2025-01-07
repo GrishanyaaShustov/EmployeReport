@@ -8,12 +8,27 @@ EmployeReport InputEmploye() {
     EmployeReport reportInstance;
 
     std::cout << "Enter report data: " << std::endl;
+
 // ---------------------------------------------------------------------------------------
-    std::cout << "Full name: ";
-    std::getline(std::cin >> std::ws, reportInstance.fullName);
-    while (reportInstance.fullName.empty()) {
-        std::cout << "Full name cannot be empty. Please try again: ";
-        std::getline(std::cin, reportInstance.fullName);
+    std::cout << "Station: ";
+    while (!(std::cin >> reportInstance.stationNumber) || reportInstance.stationNumber < 0) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Invalid station number. Please enter a non-negative integer: ";
+    }
+// ---------------------------------------------------------------------------------------
+    std::cout << "First name: ";
+    std::getline(std::cin >> std::ws, reportInstance.firstName);
+    while (reportInstance.firstName.empty()) {
+        std::cout << "First name cannot be empty. Please try again: ";
+        std::getline(std::cin, reportInstance.firstName);
+    }
+// ---------------------------------------------------------------------------------------
+    std::cout << "Last name: ";
+    std::getline(std::cin >> std::ws, reportInstance.lastName);
+    while (reportInstance.lastName.empty()) {
+        std::cout << "Last name cannot be empty. Please try again: ";
+        std::getline(std::cin, reportInstance.lastName);
     }
 // ---------------------------------------------------------------------------------------
     std::cout << "Rank (select one): " << std::endl;
@@ -43,13 +58,6 @@ EmployeReport InputEmploye() {
         case 3:
             reportInstance.rank = "Firefighter";
         break;
-    }
-// ---------------------------------------------------------------------------------------
-    std::cout << "Station: ";
-    while (!(std::cin >> reportInstance.stationNumber) || reportInstance.stationNumber < 0) {
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cout << "Invalid station number. Please enter a non-negative integer: ";
     }
 // ---------------------------------------------------------------------------------------
     std::cout << "Air temperature (Celsius): ";

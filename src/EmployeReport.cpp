@@ -3,9 +3,10 @@
 #include <iomanip>
 
 void EmployeReport::print() const {
-    std::cout << "Full name: " << fullName << "\n"
+    std::cout << "Station: " << stationNumber << "\n"
+    << "First name: " << firstName << "\n"
+    << "Last name: " << lastName << "\n"
     << "Rank: " << rank << "\n"
-    << "Station: " << stationNumber << "\n"
     << "Air temperature: " << airTemperature << "\n"
     << "Wind speed: " << windSpeed << "\n"
     << "Threats eliminated: " << threatsEliminated << "\n"
