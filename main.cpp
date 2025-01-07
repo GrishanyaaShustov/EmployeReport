@@ -1,7 +1,6 @@
-#include <iostream>
 #include "EmployeReport.h"
+#include "InputEmploye.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
     return 0;
 }

@@ -5,6 +5,8 @@ set(CMAKE_CXX_STANDARD 20)
 
 include_directories(${CMAKE_SOURCE_DIR}/Headers)
 
-add_executable(testProj main.cpp
+add_executable(EmployeReport main.cpp
         Headers/EmployeReport.h
-        src/EmployeReport.cpp)
+        src/EmployeReport.cpp
+        src/InputEmploye.cpp
+        headers/InputEmploye.h)

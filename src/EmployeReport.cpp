@@ -10,5 +10,5 @@ void EmployeReport::print() const {
     << "Wind speed: " << windSpeed << "\n"
     << "Threats eliminated: " << threatsEliminated << "\n"
     << "Date: " << std::put_time(&reportDate, "%Y-%m-%d") << "\n"
-    << "Report time in seconds: " << reportTimeSeconds << "c\n";
+    << "Report time in seconds: " << reportTimeSeconds << "s\n";
 }
